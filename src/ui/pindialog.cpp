@@ -178,6 +178,9 @@ int PinDialog::exec() {
         return QDialog::Rejected;
   }
   ManageWindow::bringToFocus(this);
+  QTimer::singleShot(500, [this](){
+    ManageWindow::bringToFocus(this);
+  });
   return QDialog::exec();
 }
 
