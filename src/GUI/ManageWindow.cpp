@@ -27,7 +27,7 @@
 
 void ManageWindow::bringToFocus(QWidget *w) {
 
-    for ( QWindow* appWindow : qApplication.allWindows() )
+    for ( QWindow* appWindow : qApp->allWindows() )
     {
       appWindow->show(); //bring window to top on OSX
       appWindow->raise(); //bring window from minimized state on OSX
@@ -39,6 +39,7 @@ void ManageWindow::bringToFocus(QWidget *w) {
   w->show();
   w->raise();
   w->activateWindow();
+  w->raise();
 }
 
 #include <QDesktopWidget>
