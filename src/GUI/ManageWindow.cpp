@@ -27,13 +27,13 @@
 
 void ManageWindow::bringToFocus(QWidget *w) {
 
-    for ( QWindow* appWindow : qApp->allWindows() )
-    {
-      appWindow->show(); //bring window to top on OSX
-      appWindow->raise(); //bring window from minimized state on OSX
+//    for ( QWindow* appWindow : qApp->allWindows() )
+//    {
+//      appWindow->show(); //bring window to top on OSX
+//      appWindow->raise(); //bring window from minimized state on OSX
 
-      appWindow->requestActivate(); //bring window to front/unminimize on windows
-    }
+//      appWindow->requestActivate(); //bring window to front/unminimize on windows
+//    }
 
   w->setWindowState( (w->windowState() & ~Qt::WindowState::WindowMinimized) | Qt::WindowActive);
   w->show();
